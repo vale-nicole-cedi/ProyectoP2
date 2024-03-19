@@ -25,3 +25,22 @@ void Usuario::mostrarAmigos(){
 void Usuario::mostrarPublicaciones(){
     //mostrar todas las publicaciones del usuario
 }
+
+void Usuario::agregarAmigo(Usuario* nuevoAmigo){
+    this->amigos.push_back(nuevoAmigo);
+    nuevoAmigo->amigos.push_back(this);
+}
+
+void Usuario::crearPublicacion(){
+    //crea una nueva publicacion para el usuario
+    //crea directamente desde el metodo y agrega el apuntador al listado de publicaciones del usuario
+}
+
+Usuario* Usuario::getAmigo(int id){
+    for(int i=0; i<amigos.size(); i++){
+        if(amigos[i]->id == id){
+            return amigos[i];
+            break;
+        }
+    }
+}
