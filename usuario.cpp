@@ -18,7 +18,7 @@ void Usuario::mostrar(){
 
 void Usuario::mostrarAmigos(){
     for(int i=0; i<amigos.size(); i++){
-        cout << amigos[i]->nombre << endl;
+        amigos[i]->mostrar();
     }
 }
 
