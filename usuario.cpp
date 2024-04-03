@@ -26,6 +26,7 @@ void Usuario::mostrarAmigos(){
 
 void Usuario::mostrarPublicaciones(){
     //mostrar todas las publicaciones del usuario
+    //for->mostrarpublicacion()
 }
 
 void Usuario::agregarAmigo(Usuario* nuevoAmigo){
@@ -47,4 +48,24 @@ Usuario* Usuario::getAmigo(int id){
             break;
         }
     }
+}
+
+Usuario::Usuario(string nombre){
+    //generar un id aleatorio
+    this->nombre = nombre;
+    this->edad = 0;
+    this->nacionalidad = "no definida";
+}
+
+Usuario::Usuario(string nombre, int edad){
+    //generar un id aleatorio
+    this->nombre = nombre;
+    this->edad = edad;
+    this->nacionalidad = "no definida";
+}
+Usuario::Usuario(string nombre, int edad, string nacionalidad){
+    //generar un id aleatorio
+    this->nombre = nombre;
+    this->edad = edad;
+    this->nacionalidad = nacionalidad;
 }
