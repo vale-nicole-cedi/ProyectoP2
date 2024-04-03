@@ -3,8 +3,8 @@
 #include "redsocial.h"
 using namespace std;
 using namespace rlutil;
-int idUsuario, idAmigo;
 Usuario* usuario, amigo;
+int idUsuario, idAmigo;
 
 
 int main()
@@ -58,7 +58,7 @@ inicio:
                 if (usuario != nullptr) {
                     cout<<"Haz accedido con exito!"<<endl;
                     cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
-                    ccout <<"1. Ver lista de amigos" << endl; //ascii 49
+                    cout <<"1. Ver lista de amigos" << endl; //ascii 49
                     cout << "2. Ver lista de publicaciones" << endl;
                     cout << "3. Crear una nueva pulicacion" << endl;
                     cout << "4. Entrar al perfil de un amigo" << endl;
@@ -74,20 +74,20 @@ inicio:
                             if(j == 49) //lista de amigos 
                             {
                                 cout << "Esta es tu lista de amigos: " << endl;
-                                usuario->mostrarAmigos() << endl;
+                                usuario->mostrarAmigos();
                                 break;
                             }
 
                             if(j == 50)//lista de publicaciones
                             {
                                 cout << "Esta es tu lista de publicaciones: " << endl;
-                                usuario->mostrarPublicaciones() << endl;
+                                usuario->mostrarPublicaciones();
                                 break;
                             }
                             if(j == 51)//crear publicacion
                             {
                                 cout << "Nueva publicacion: " << endl;
-                                usuario->crearPublicacion() << endl;
+                                usuario->crearPublicacion();
                                 break;
                             }
                             if(j == 52) //entrar perfil amigo
