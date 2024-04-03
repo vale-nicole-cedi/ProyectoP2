@@ -1,5 +1,7 @@
-#ifndef user_h
-#define user_h
+#ifndef redSocial_h
+#define redSocial_h
+#include "usuario.h"
+#include "publicacion.h"
 
 #include <iostream>
 #include <string>

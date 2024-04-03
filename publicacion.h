@@ -1,5 +1,6 @@
-#ifndef user_h
-#define user_h
+#ifndef publicacion_h
+#define publicacion_h
+#include "usuario.h"
 
 #include <iostream>
 #include <string>

@@ -1,9 +1,10 @@
-#ifndef user_h
-#define user_h
+#ifndef usuario_h
+#define usuario_h
 
 #include <iostream>
 #include <string>
 #include <vector>
+#include "publicacion.h"
 using namespace std;
 
 class Publicacion;
