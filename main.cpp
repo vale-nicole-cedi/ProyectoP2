@@ -3,7 +3,8 @@
 #include "redsocial.h"
 using namespace std;
 using namespace rlutil;
-Usuario* usuario, amigo;
+Usuario* usuario;
+Usuario* amigo;
 int idUsuario, idAmigo;
 
 
