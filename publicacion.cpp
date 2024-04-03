@@ -2,13 +2,14 @@
 #include <string>
 #include <vector>
 #include "publicacion.h"
+#include "usuario.h"
 
 using namespace std;
 
 void Publicacion::mostrarPublicacion(){
     cout << this->fecha << endl;
     cout << this->contenido << endl;
-    //cout nombre del usuario
+    cout << this->usuario->nombre;
 }
 
 Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
