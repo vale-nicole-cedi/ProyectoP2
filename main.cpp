@@ -51,11 +51,12 @@ inicio:
 
             if(k == 51)//perfil de usuario
             { 
-              cout << "Ingrese el ID de un usuario para acceder: "<<endl;
-              cout << "ID: ";
+                cout << "Ingrese el ID de un usuario para acceder: "<<endl;
+                cout << "ID: ";
                 cin >> idUsuario;
                 usuario = Nonsense.getUsuario(idUsuario);
-                if (usuario != nullptr) {
+                if (usuario != nullptr) 
+                {
                     cout<<"Haz accedido con exito!"<<endl;
                     cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
                     cout <<"1. Ver lista de amigos" << endl; //ascii 49
@@ -125,27 +126,25 @@ inicio:
                         }
                     }
 
+            
+            
+            
+                }
+                
+                if(k == 52) //agregar usuario
+                {
+                    cout << "Agregar usuario: " << endl;
+                    Nonsense.agregarUsuario();
+                    break;
+                }
 
-                    cout << "Perfil de Usuario:" << endl;
-                    usuario->mostrar();
-                    cout << endl;
-                    cout << "Publicaciones:" << endl;
-                    usuario->mostrarPublicaciones();
-            }
-
-            if(k == 52) //agregar usuario
-            {
-                cout << "Agregar usuario: " << endl;
-                Nonsense.agregarUsuario();
-                break;
-            }
-
-            if(k == 48) //salir
-            {
-                return 0;
-            }
+                if(k == 48) //salir
+                {
+                    return 0;
+                }
 
             }
-        }   
+             
+        }
     }
 }
