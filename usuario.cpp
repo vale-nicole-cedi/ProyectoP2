@@ -5,6 +5,8 @@
 
 using namespace std;
 
+class Publicacion;
+
 int Usuario::getId(){
 return this->id;
 }
@@ -32,8 +34,10 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
 }
 
 void Usuario::crearPublicacion(){
-    //crea una nueva publicacion para el usuario
-    //crea directamente desde el metodo y agrega el apuntador al listado de publicaciones del usuario
+    string fecha;
+    string contenido;
+    //publicacion();
+    //agregar al vector de publicaciones
 }
 
 Usuario* Usuario::getAmigo(int id){
