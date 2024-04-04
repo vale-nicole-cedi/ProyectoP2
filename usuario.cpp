@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <cstdlib> // para que se genere  los id aleatorios
 #include "usuario.h"
 
 using namespace std;
@@ -55,20 +56,20 @@ Usuario* Usuario::getAmigo(int id){
 }
 
 Usuario::Usuario(string nombre){
-    //generar un id aleatorio
+    this->id = rand() % 10000; //generar un id aleatorio
     this->nombre = nombre;
     this->edad = 0;
     this->nacionalidad = "no definida";
 }
 
 Usuario::Usuario(string nombre, int edad){
-    //generar un id aleatorio
+    this->id = rand() % 10000; //generar un id aleatorio
     this->nombre = nombre;
     this->edad = edad;
     this->nacionalidad = "no definida";
 }
 Usuario::Usuario(string nombre, int edad, string nacionalidad){
-    //generar un id aleatorio
+    this->id = rand() % 10000; //generar un id aleatorio
     this->nombre = nombre;
     this->edad = edad;
     this->nacionalidad = nacionalidad;
