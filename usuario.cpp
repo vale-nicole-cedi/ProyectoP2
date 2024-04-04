@@ -25,6 +25,9 @@ void Usuario::mostrarAmigos(){
 }
 
 void Usuario::mostrarPublicaciones(){
+    for(int i=0; i<this->publicaciones.size(); i++){
+        publicaciones[i]->mostrarPublicacion();
+    }
     //mostrar todas las publicaciones del usuario
     //for->mostrarpublicacion()
 }
@@ -37,8 +40,9 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
 void Usuario::crearPublicacion(){
     string fecha;
     string contenido;
-    //publicacion();
+    Publicacion p(this, fecha, contenido);
     //agregar al vector de publicaciones
+    this->publicaciones.push_back(&p);
 }
 
 Usuario* Usuario::getAmigo(int id){
