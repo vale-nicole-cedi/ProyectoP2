@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include "redsocial.h"
+#include "publicacion.h"
 
 using namespace std;
 
@@ -26,7 +27,7 @@ void RedSocial::mostrarUsuarios(){
 
 void RedSocial::mostrarPublicaciones(){
     for(int i=0; i<this->publicaciones.size(); i++){
-        //mostrar publicacion
+        publicaciones[i]->mostrarPublicacion();
     }
 }
 
