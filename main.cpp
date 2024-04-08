@@ -19,8 +19,6 @@ int main()
     cout<<"/ /_/ / /_/ /___/ /__/ // // ____/  / /|  / /___  / /    "<<endl;
     cout<<"\\____/\\____//____/____/___/_/      /_/ |_/_____/ /_/     "<<endl;
                                                                        
-
-inicio:
     while(true)
     {
     cout << "Menu:" << endl;
@@ -61,15 +59,15 @@ inicio:
                     cout<<"Haz accedido con exito!"<<endl;
                     do 
                     {
-menusuario:
-                    cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
-                    cout <<"1. Ver lista de amigos" << endl; //ascii 49
-                    cout << "2. Ver lista de publicaciones" << endl;
-                    cout << "3. Crear una nueva pulicacion" << endl;
-                    cout << "4. Entrar al perfil de un amigo" << endl;
-                    cout << "5. Agregar un nuevo amigo" <<endl;
-                    cout << "0. salir" << endl;
-                    cin>>user;
+                        menusuario:
+                        cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
+                        cout <<"1. Ver lista de amigos" << endl; //ascii 49
+                        cout << "2. Ver lista de publicaciones" << endl;
+                        cout << "3. Crear una nueva pulicacion" << endl;
+                        cout << "4. Entrar al perfil de un amigo" << endl;
+                        cout << "5. Agregar un nuevo amigo" <<endl;
+                        cout << "0. salir" << endl;
+                        cin>>user;
 
                         switch(user)
                         {
@@ -113,7 +111,6 @@ menusuario:
                                 }
                                 break;
                             case 0:
-                                goto inicio;
                                 break;
                             default:
                                 cout<<"Elige una de las opciones por favor"<<endl;
@@ -122,10 +119,9 @@ menusuario:
                         }
 
                         
-                    } while (user !=5);
+                    } while (user !=0);
                         
                 }
-        
                 break;
                 
                 case 4: //agregar usuario
@@ -138,11 +134,12 @@ menusuario:
 
                 default:
                     cout << "Escoge una de las opciones por favor" << endl;
-                    goto inicio;
+
                     break;
 
             
              
         }
     }
+    return 0;
 }
