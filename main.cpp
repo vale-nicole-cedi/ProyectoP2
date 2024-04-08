@@ -7,21 +7,21 @@ Usuario* usuario;
 Usuario* amigo;
 int idUsuario, idAmigo;
 int principal, user;
+RedSocial gs ("GossipNet");
+
 
 
 int main()
 {
-    RedSocial Nonsense ("Nonsense");
-    cout << "███╗   ██╗ ██████╗ ███╗   ██╗███████╗███████╗███╗   ██╗███████╗███████╗" << endl;
-    cout << "████╗  ██║██╔═══██╗████╗  ██║██╔════╝██╔════╝████╗  ██║██╔════╝██╔════╝" << endl;
-    cout << "██╔██╗ ██║██║   ██║██╔██╗ ██║███████╗█████╗  ██╔██╗ ██║███████╗█████╗  " << endl;
-    cout << "██║╚██╗██║██║   ██║██║╚██╗██║╚════██║██╔══╝  ██║╚██╗██║╚════██║██╔══╝  " << endl;
-    cout << "██║ ╚████║╚██████╔╝██║ ╚████║███████║███████╗██║ ╚████║███████║███████╗" << endl;
-    cout << "╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝" << endl;
+    cout<<"   __________  __________ ________     _   ______________"<<endl;
+    cout<<"  / ____/ __ \\/ ___/ ___//  _/ __ \\   / | / / ____/_  __/"<<endl;
+    cout<<" / / __/ / / /\\__ \\\\__ \\ / // /_/ /  /  |/ / __/   / /   "<<endl;
+    cout<<"/ /_/ / /_/ /___/ /__/ // // ____/  / /|  / /___  / /    "<<endl;
+    cout<<"\\____/\\____//____/____/___/_/      /_/ |_/_____/ /_/     "<<endl;
                                                                        
 
 inicio:
-while(true)
+    while(true)
     {
     cout << "Menu:" << endl;
     cout << "Da click en el numero indicado para continuar" << endl;
@@ -40,14 +40,14 @@ while(true)
             case 1: //lista usuarios
             
                 cout << "Lista de usuarios: "<<endl;
-                Nonsense.mostrarUsuarios();
+                gs.mostrarUsuarios();
                 break;
             
 
             case 2: //lista publicaciones
             
                 cout << "Lista de publicaciones: " <<endl;
-                Nonsense.mostrarPublicaciones();
+                gs.mostrarPublicaciones();
                 break;
             
 
@@ -55,10 +55,12 @@ while(true)
                 cout << "Ingrese el ID de un usuario para acceder: "<<endl;
                 cout << "ID: ";
                 cin >> idUsuario;
-                usuario = Nonsense.getUsuario(idUsuario);
+                usuario = gs.getUsuario(idUsuario);
                 if (usuario != nullptr) 
                 {
                     cout<<"Haz accedido con exito!"<<endl;
+                    do 
+                    {
 menusuario:
                     cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
                     cout <<"1. Ver lista de amigos" << endl; //ascii 49
@@ -69,8 +71,6 @@ menusuario:
                     cout << "0. salir" << endl;
                     cin>>user;
 
-                    while (true) 
-                    {
                         switch(user)
                         {
                             case 1://lista de amigos 
@@ -93,7 +93,7 @@ menusuario:
                                 cout << "Escribe el ID de tu amigo" << endl;
                                 cout << "ID de amigo: ";
                                 cin >> idAmigo;
-                                amigo = Nonsense.getUsuario(idAmigo);
+                                amigo = gs.getUsuario(idAmigo);
                                 if (amigo != nullptr)
                                 {
                                     cout << "Esta es la informacion de tu amigo: "<<endl;
@@ -105,7 +105,7 @@ menusuario:
                                 cout << "Escribe el ID de tu nuevo amigo" << endl;
                                 cout << "ID de nuevo amigo: ";
                                 cin >> idAmigo;
-                                amigo = Nonsense.getUsuario(idAmigo);
+                                amigo = gs.getUsuario(idAmigo);
                                 if (amigo != nullptr)
                                 {
                                     cout << "Se ha agregado correctamente tu nuevo amigo!" << endl;
@@ -121,13 +121,16 @@ menusuario:
                                 break;
                         }
 
-                    }
+                        
+                    } while (user !=5);
                         
                 }
+        
+                break;
                 
                 case 4: //agregar usuario
                     cout << "Agregar usuario: " << endl;
-                    Nonsense.agregarUsuario();
+                    gs.agregarUsuario();
                     break;
 
                 case 0: //salir

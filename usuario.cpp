@@ -20,8 +20,12 @@ void Usuario::mostrar(){
 }
 
 void Usuario::mostrarAmigos(){
-    for(int i=0; i<amigos.size(); i++){
+    if(this->amigos.size() == 0){
+        cout << "no tienes amigos" << endl;
+    } else {
+        for(int i=0; i<amigos.size(); i++){
         amigos[i]->mostrar();
+    }
     }
 }
 

@@ -11,16 +11,17 @@ void RedSocial::agregarUsuario(){
     cout << "Ingresa el nombre del nuevo usuario: ";
     cin >> nombreUsuario;
 
-    Usuario usuario(nombreUsuario);
-    usuarios.push_back(&usuario);
+    Usuario* usuario = new Usuario(nombreUsuario);
+    usuarios.push_back(usuario);
     numeroDeUsuarios++;
     cout << "El usuario: " << nombreUsuario << " agregado correctamente." << endl;
 }
 
 void RedSocial::mostrarUsuarios(){
-        cout << "Usuarios en Nonsense" << ":" << endl;
-    for (Usuario* usuario : usuarios) {
-        cout << "- " << usuario->nombre << endl;
+        cout << "Usuarios en GossipNet" << ":" << endl;
+    for (int i=0; i<this->usuarios.size(); i++) {
+        cout << "- ";
+        this->usuarios[i]->mostrar();
     }
 
 }
@@ -31,14 +32,16 @@ void RedSocial::mostrarPublicaciones(){
     }
 }
 
-Usuario* RedSocial::getUsuario(int id){
- for (Usuario* usuario : usuarios) {
-        if (usuario->getId() == id) {
-            return usuario;
-        }
- }
-    std::cout << "No se encontró un usuario con el ID " << id << std::endl;
-    return nullptr;
+Usuario* RedSocial::getUsuario(int id)
+{ 
+    for (int i = 0; i < usuarios.size(); ++i) 
+    { 
+        Usuario* usuario = usuarios[i]; 
+        if (usuario->getId() == id) 
+        { return usuario; } 
+    } 
+    cout << "No se encontró un usuario con el ID " << id << endl; 
+    return nullptr; 
 }
 
 
@@ -52,6 +55,7 @@ RedSocial::RedSocial(string nombre){
 RedSocial::RedSocial(string nombre, vector<Usuario*> usuarios){
  this->nombre = nombre;
     this->usuarios = usuarios;
+
     this->numeroDeUsuarios = usuarios.size();
     this->numeroDePublicaciones = 0;
 }
@@ -63,4 +67,3 @@ this->nombre = nombre;
     this->numeroDeUsuarios = usuarios.size();
     this->numeroDePublicaciones = publicaciones.size();
 }
-
