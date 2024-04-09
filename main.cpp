@@ -30,7 +30,6 @@ int main()
     cout << "4. Agregar un nuevo usuario" << endl;
     cout << "0. Salir" << endl;
 
-    cin>>principal;
     
     switch (principal)
         {
@@ -120,13 +119,17 @@ int main()
 
                         
                     } while (user !=0);
-                        
+                        cin>>principal;
                 }
+
                 break;
                 
                 case 4: //agregar usuario
                     cout << "Agregar usuario: " << endl;
-                    int x;
+                    gs.agregarUsuario(); 
+
+
+                  /*int x;
                     do 
                     {
                         premium:
@@ -155,7 +158,7 @@ int main()
                                 break;
                         }
 
-                    } while (x !=0)
+                    } while (x !=0);*/
                     break;
 
                 case 0: //salir
@@ -172,3 +175,15 @@ int main()
     }
     return 0;
 }
+
+
+/* 
+
+Chismes CEDI:
+- Hay gente que toma fotos de los pies de las demas personas en los banios de la escuela y los sube a instagram :o
+- Cacharon a una companiera compiando en el examen de biologia de 4 semestre 
+- 
+
+
+
+*/ 
