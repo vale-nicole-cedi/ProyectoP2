@@ -8,8 +8,8 @@ using namespace std;
 
 void Publicacion::mostrarPublicacion(){
     cout << "Fecha: " << fecha << endl;
-    cout << ontenido << endl;
-    cout << usuario->nombre << endl;
+    cout << "Contenido: " << contenido << endl;
+    cout << "Por: " << usuario->nombre << endl;
 }
 
 Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido)
