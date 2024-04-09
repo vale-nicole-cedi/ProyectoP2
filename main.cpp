@@ -21,6 +21,7 @@ int main()
                                                                        
     while(true)
     {
+        menuprincipal:
     cout << "Menu:" << endl;
     cout << "Da click en el numero indicado para continuar" << endl;
 
@@ -78,16 +79,23 @@ int main()
                             
 
                             case 2: //lista de publicaciones
+                            {
                                 cout << "Esta es tu lista de publicaciones: " << endl;
                                 usuario->mostrarPublicaciones();
                                 break;
+                            }
                             
                             case 3://crear publicacion
+                            {
                                 cout << "Nueva publicacion: " << endl;
                                 usuario->crearPublicacion();
+                                Publicacion* newpub = usuario->publicaciones[(usuario->publicaciones.size())-1];
+                                gs.agregarpublicacion(newpub);
                                 break;
+                            }
                             
                             case 4: //entrar perfil amigo
+                            {
                                 cout << "Escribe el ID de tu amigo" << endl;
                                 cout << "ID de amigo: ";
                                 cin >> idAmigo;
@@ -98,7 +106,10 @@ int main()
                                     amigo->mostrar();
                                 }
                                 break;
+                            }
+                                
                             case 5: // agregar amigo
+                            {
                                 cout << "Agregar un amigo"<< endl;
                                 cout << "Escribe el ID de tu nuevo amigo" << endl;
                                 cout << "ID de nuevo amigo: ";
@@ -110,6 +121,8 @@ int main()
                                     usuario->agregarAmigo(amigo);
                                 }
                                 break;
+                            }
+                                
                             case 0:
                                 break;
                             default:
@@ -140,6 +153,7 @@ int main()
                             case 1://Normal
                                 cout << "Disfruta de Gossip Net como usuario normal!" << endl;
                                 gs.agregarUsuario();
+                                goto menuprincipal;
                                 break;
                             
 
@@ -155,7 +169,7 @@ int main()
                                 break;
                         }
 
-                    } while (x !=0)
+                    } while (x !=0);
                     break;
 
                 case 0: //salir

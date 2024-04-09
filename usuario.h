@@ -33,4 +33,18 @@ class Usuario{
 
 };
 
+class UsuarioPremium: public Usuario{
+    public:
+    vector<Publicacion*> publicacionespriv;
+
+    UsuarioPremium(string nombre):Usuario(nombre){}
+    UsuarioPremium(string nombre, int edad):Usuario(nombre, edad){}
+    UsuarioPremium(string nombre, int edad, string nacionalidad):Usuario(nombre, edad, nacionalidad){}
+
+    void verPrivados();
+    void agregarPrivado();
+    void borrarPublicacion();
+
+};
+
 #endif

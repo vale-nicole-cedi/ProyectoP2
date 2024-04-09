@@ -13,6 +13,7 @@ class Publicacion{
     int id;
 
     public:
+    int idpublicacion;
     string fecha;
     string contenido;
     Usuario* usuario;

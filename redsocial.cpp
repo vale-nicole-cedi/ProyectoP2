@@ -32,6 +32,12 @@ void RedSocial::mostrarPublicaciones(){
     }
 }
 
+void RedSocial::mostrarPublicacionesPrivadas(){
+    for(int i=0; i<this->publicaciones.size(); i++){
+        publicacionesprivadas[i]->mostrarPublicacion();
+    }
+}
+
 Usuario* RedSocial::getUsuario(int id)
 { 
     for (int i = 0; i < usuarios.size(); ++i) 
@@ -44,6 +50,9 @@ Usuario* RedSocial::getUsuario(int id)
     return nullptr; 
 }
 
+void RedSocial::agregarpublicacion(Publicacion* pnew){
+    this->publicaciones.push_back(pnew);
+}
 
 RedSocial::RedSocial(string nombre){
     this->nombre = nombre;

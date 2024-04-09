@@ -59,6 +59,43 @@ void Usuario::crearPublicacion() {
     cout << "Publicación agregada exitosamente." << endl;
 }
 
+void UsuarioPremium::verPrivados(){
+    for(int i=0; i<this->publicacionespriv.size(); i++){
+        publicacionespriv[i]->mostrarPublicacion();
+    }
+}
+
+void UsuarioPremium::agregarPrivado(){
+    string fecha, contenido;
+
+    cout << "Ingrese la fecha de la publicación: ";
+    cin >> fecha;
+
+    cout << "Ingrese el contenido de la publicación: ";
+    cin >> contenido;
+    cin.ignore();//ignora cualquier carácter adicional
+
+    Publicacion* p = new Publicacion(this, fecha, contenido);
+    // Agregar al vector de publicaciones del usuario
+    this->publicacionespriv.push_back(p);
+
+    cout << "Publicación privada agregada exitosamente." << endl;
+}
+
+void UsuarioPremium::borrarPublicacion(){
+    int ans;
+    cout << "Desea borrar una publicación publica o privada?" << endl;
+    cin>> ans;
+    switch(ans){
+        case 1:
+        cout << "Ingrese el ID de la publicación" << endl;
+        for(int i=0; i<this->publicacionespriv.size(); i++){
+
+        }
+    }
+    cout << "Ingrese el ID de la publicación" << endl;
+
+}
 
 Usuario* Usuario::getAmigo(int id){
     for(int i=0; i<amigos.size(); i++){
