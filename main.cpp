@@ -38,6 +38,7 @@ int main()
     cout<<" / / __/ / / /\\__ \\\\__ \\ / // /_/ /  /  |/ / __/   / /   "<<endl;
     cout<<"/ /_/ / /_/ /___/ /__/ // // ____/  / /|  / /___  / /    "<<endl;
     cout<<"\\____/\\____//____/____/___/_/      /_/ |_/_____/ /_/     "<<endl;
+    cout <<endl;
                                                                        
     while(true)
     {
@@ -50,16 +51,20 @@ int main()
     cout << "3. Entrar a un perfil de usuario" << endl;
     cout << "4. Agregar un nuevo usuario" << endl;
     cout << "0. Salir" << endl;
+    cout <<endl;
 
     cin>>principal;
     
+
     switch (principal)
         {
 
             case 1: //lista usuarios
-            
+    
                 cout << "Lista de usuarios: "<<endl;
                 gs.mostrarUsuarios();
+                cout <<endl;
+
                 break;
             
 
@@ -67,6 +72,8 @@ int main()
             
                 cout << "Lista de publicaciones: " <<endl;
                 gs.mostrarPublicaciones();
+                    cout <<endl;
+
                 break;
             
 
@@ -80,6 +87,8 @@ int main()
                     if(gs.revisarpremium(idUsuario) == true){
                         usuariopremium = gs.getUsuarioPremium(idUsuario);
                         cout<<"Haz accedido con exito!"<<endl;
+                            cout <<endl;
+
                         
                     do 
                     {
@@ -93,6 +102,8 @@ int main()
                         cout << "6. Ver todas las publicaciones privadas" << endl;
                         cout << "7. Crear una nueva publicacion privada" << endl;
                         cout << "0. salir" << endl;
+                            cout <<endl;
+
                         cin>>user;
 
                         switch(user)
@@ -100,6 +111,8 @@ int main()
                             case 1://lista de amigos 
                                 cout << "Esta es tu lista de amigos: " << endl;
                                 usuario->mostrarAmigos();
+                                    cout <<endl;
+
                                 break;
                             
 
@@ -107,6 +120,8 @@ int main()
                             {
                                 cout << "Esta es tu lista de publicaciones: " << endl;
                                 usuario->mostrarPublicaciones();
+                                    cout <<endl;
+
                                 break;
                             }
                             
@@ -116,6 +131,8 @@ int main()
                                 usuario->crearPublicacion();
                                 Publicacion* newpub = usuario->publicaciones[(usuario->publicaciones.size())-1];
                                 gs.agregarpublicacion(newpub);
+                                    cout <<endl;
+
                                 break;
                             }
                             
@@ -130,6 +147,8 @@ int main()
                                     cout << "Esta es la informacion de tu amigo: "<<endl;
                                     amigo->mostrar();
                                 }
+                                    cout <<endl;
+
                                 break;
                             }
                                 
@@ -145,6 +164,8 @@ int main()
                                     cout << "Se ha agregado correctamente tu nuevo amigo!" << endl;
                                     usuario->agregarAmigo(amigo);
                                 }
+                                    cout <<endl;
+
                                 break;
                             }
 
@@ -152,6 +173,8 @@ int main()
                             {
                                 cout << "Lista de publicaciones: " <<endl;
                                 gs.mostrarPublicacionesPrivadas();
+                                    cout <<endl;
+
                                 break;
                             }
 
@@ -161,6 +184,8 @@ int main()
                                 usuariopremium->agregarPrivado();
                                 Publicacion* newpub = usuariopremium->publicacionespriv[(usuariopremium->publicacionespriv.size())-1];
                                 gs.agregarpublicacionprivada(newpub);
+                                    cout <<endl;
+
                                 break;
                             }
                                 
@@ -169,6 +194,8 @@ int main()
                             default:
                                 cout<<"Elige una de las opciones por favor"<<endl;
                                 goto menusuariopremium;
+                                    cout <<endl;
+
                                 break;
                         }
 
@@ -188,13 +215,18 @@ int main()
                         cout << "4. Entrar al perfil de un amigo" << endl;
                         cout << "5. Agregar un nuevo amigo" <<endl;
                         cout << "0. salir" << endl;
+                            cout <<endl;
+
                         cin>>user;
+                        cls ();
 
                         switch(user)
                         {
                             case 1://lista de amigos 
                                 cout << "Esta es tu lista de amigos: " << endl;
                                 usuario->mostrarAmigos();
+                                    cout <<endl;
+
                                 break;
                             
 
@@ -202,6 +234,8 @@ int main()
                             {
                                 cout << "Esta es tu lista de publicaciones: " << endl;
                                 usuario->mostrarPublicaciones();
+                                    cout <<endl;
+
                                 break;
                             }
                             
@@ -211,6 +245,8 @@ int main()
                                 usuario->crearPublicacion();
                                 Publicacion* newpub = usuario->publicaciones[(usuario->publicaciones.size())-1];
                                 gs.agregarpublicacion(newpub);
+                                    cout <<endl;
+
                                 break;
                             }
                             
@@ -225,6 +261,8 @@ int main()
                                     cout << "Esta es la informacion de tu amigo: "<<endl;
                                     amigo->mostrar();
                                 }
+                                    cout <<endl;
+
                                 break;
                             }
                                 
@@ -240,6 +278,8 @@ int main()
                                     cout << "Se ha agregado correctamente tu nuevo amigo!" << endl;
                                     usuario->agregarAmigo(amigo);
                                 }
+                                    cout <<endl;
+
                                 break;
                             }
                                 
@@ -247,6 +287,8 @@ int main()
                                 break;
                             default:
                                 cout<<"Elige una de las opciones por favor"<<endl;
+                                    cout <<endl;
+                                cls();
                                 goto menusuario;
                                 break;
                         }
@@ -267,6 +309,8 @@ int main()
                         cout<<"Elige el tipo de usuario a crear:"<<endl;
                         cout << "1. Normal " << endl; 
                         cout << "2. Premium" << endl;
+                            cout <<endl;
+
                         cin>>x;
 
                         switch(x)
@@ -275,6 +319,8 @@ int main()
                                 cout << "Disfruta de Gossip Net como usuario normal!" << endl;
                                 gs.agregarUsuario();
                                 goto menuprincipal;
+                                    cout <<endl;
+
                                 break;
                             
 
@@ -282,12 +328,16 @@ int main()
                                 cout << "Se te cobrara $50 pesos para ser un usuario premium" << endl;
                                 gs.agregarUsuarioPremium();
                                 goto menuprincipal;
+                                    cout <<endl;
+
                                 break;
                             
 
                             default:
                                 cout<<"Elige una de las opciones por favor"<<endl;
                                 goto premium;
+                                    cout <<endl;
+
                                 break;
                         }
 
@@ -299,6 +349,7 @@ int main()
 
                 default:
                     cout << "Escoge una de las opciones por favor" << endl;
+                    cls();
 
                     break;
 

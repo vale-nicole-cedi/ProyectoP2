@@ -17,11 +17,15 @@ void Usuario::mostrar(){
     cout << "Nombre: " << this->nombre << endl;
     cout << "Edad: " << this->edad << endl;
     cout << "Nacionalidad: " << this->nacionalidad << endl;
+      cout<<endl;
+
 }
 
 void Usuario::mostrarAmigos(){
     if(this->amigos.size() == 0){
-        cout << "no tienes amigos" << endl;
+        cout << "Eres un lobo solitario" << endl;
+              cout<<endl;
+
     } else {
         for(int i=0; i<amigos.size(); i++){
         amigos[i]->mostrar();
@@ -62,9 +66,13 @@ void Usuario::crearPublicacion() {
 }
 
 void UsuarioPremium::verPrivados(){
+    
     for(int i=0; i<this->publicacionespriv.size(); i++){
         publicacionespriv[i]->mostrarPublicacion();
+   
     }
+
+   
 }
 
 void UsuarioPremium::agregarPrivado(){
@@ -73,11 +81,17 @@ void UsuarioPremium::agregarPrivado(){
     cout << "Ingrese la fecha de la publicación: ";
     cin >> fecha;
 
+
+
     cout << "Ingrese el contenido de la publicación: ";
     cin >> contenido;
+
+
     cin.ignore();//ignora cualquier carácter adicional
 
     Publicacion* p = new Publicacion(this, fecha, contenido);
+        cout <<endl;
+
     // Agregar al vector de publicaciones del usuario
     this->publicacionespriv.push_back(p);
 

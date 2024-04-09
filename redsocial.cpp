@@ -12,15 +12,23 @@ void RedSocial::agregarUsuario(){
  string nacionalidad;
     cout << "Ingresa tu nombre del nuevo usuario: ";
     cin >> nombreUsuario;
-     cout << "Ingresa tu edad ";
+ 
+
+     cout << "Ingresa tu edad: ";
     cin >> edad;
-     cout << "Ingresa tu nacionalidad ";
+
+
+     cout << "Ingresa tu nacionalidad: ";
+
     cin >> nacionalidad;
+            cout <<endl;
 
     Usuario* usuario = new Usuario(nombreUsuario,edad,nacionalidad);
     usuarios.push_back(usuario);
     numeroDeUsuarios++;
     cout << "El usuario: " << nombreUsuario << " agregado correctamente." << endl;
+        cout <<endl;
+
 }
 
 void RedSocial::agregarUsuarioPremium(){
@@ -29,16 +37,24 @@ string nombreUsuario;
  string nacionalidad;
     cout << "Ingresa tu nombre del nuevo usuario: ";
     cin >> nombreUsuario;
+        cout <<endl;
+
      cout << "Ingresa tu edad ";
     cin >> edad;
+        cout <<endl;
+
      cout << "Ingresa tu nacionalidad ";
     cin >> nacionalidad;
+        cout <<endl;
+
 
     UsuarioPremium* usuario = new UsuarioPremium(nombreUsuario,edad,nacionalidad);
     usuarios.push_back(usuario);
     usuariospremium.push_back(usuario);
     numeroDeUsuarios++;
     cout << "El usuario: " << nombreUsuario << " agregado correctamente." << endl;
+        cout <<endl;
+
 }
 
 void RedSocial::mostrarUsuarios(){
@@ -47,6 +63,7 @@ void RedSocial::mostrarUsuarios(){
         cout << "- ";
         this->usuarios[i]->mostrar();
     }
+    cout <<endl;
 
 }
 
@@ -57,6 +74,11 @@ void RedSocial::mostrarPublicaciones(){
 }
 
 void RedSocial::mostrarPublicacionesPrivadas(){
+    cout << "CHISMES CEDI:"<<endl;
+    cout <<"- Hay alguien que le tomaba fotos a los pies de las personas en los baños"<<endl;
+    cout <<"  y las publicaba en insta"<<endl;
+    cout<<endl;
+    
     for(int i=0; i<this->publicacionesprivadas.size(); i++){
         publicacionesprivadas[i]->mostrarPublicacion();
     }
@@ -71,6 +93,8 @@ Usuario* RedSocial::getUsuario(int id)
         { return usuario; } 
     } 
     cout << "No se encontró un usuario con el ID " << id << endl; 
+        cout <<endl;
+
     return nullptr; 
 }
 
@@ -83,6 +107,8 @@ UsuarioPremium* RedSocial::getUsuarioPremium(int id)
         { return usuario; } 
     } 
     cout << "No se encontró un usuario con el ID " << id << endl; 
+        cout <<endl;
+
     return nullptr; 
 }
 

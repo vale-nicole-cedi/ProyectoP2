@@ -10,6 +10,7 @@ void Publicacion::mostrarPublicacion(){
     cout << "Fecha: " << fecha << endl;
     cout << "Contenido: " << contenido << endl;
     cout << "Por: " << usuario->nombre << endl;
+    cout<<endl;
 }
 
 Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido)
