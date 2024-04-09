@@ -43,7 +43,6 @@ class UsuarioPremium: public Usuario{
 
     void verPrivados();
     void agregarPrivado();
-    void borrarPublicacion();
 
 };
 

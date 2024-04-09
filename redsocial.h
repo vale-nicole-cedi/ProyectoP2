@@ -13,6 +13,7 @@ class Publicacion;
 
 class RedSocial{
     vector<Usuario*> usuarios;
+    vector<UsuarioPremium*> usuariospremium;
     vector<Publicacion*> publicaciones;
     vector<Publicacion*> publicacionesprivadas;
 
@@ -22,11 +23,15 @@ class RedSocial{
     int numeroDePublicaciones;
 
     void agregarUsuario();
+    void agregarUsuarioPremium();
     void mostrarUsuarios();
     void mostrarPublicaciones();
     void mostrarPublicacionesPrivadas();
+    bool revisarpremium(int id);
     void agregarpublicacion(Publicacion* pnew);
+    void agregarpublicacionprivada(Publicacion* pnew);
     Usuario* getUsuario(int id);
+    UsuarioPremium* getUsuarioPremium(int id);
 
     RedSocial(string nombre);
     RedSocial(string nombre, vector<Usuario*> usuarios);
