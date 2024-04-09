@@ -42,13 +42,23 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
     nuevoAmigo->amigos.push_back(this);
 }
 
-void Usuario::crearPublicacion(){
-    string fecha;
-    string contenido;
-    Publicacion p(this, fecha, contenido);
-    //agregar al vector de publicaciones
-    this->publicaciones.push_back(&p);
+void Usuario::crearPublicacion() {
+    string fecha, contenido;
+
+    cout << "Ingrese la fecha de la publicación: ";
+    cin >> fecha;
+
+    cout << "Ingrese el contenido de la publicación: ";
+    cin >> contenido;
+    cin.ignore();//ignora cualquier carácter adicional
+
+    Publicacion* p = new Publicacion(this, fecha, contenido);
+    // Agregar al vector de publicaciones del usuario
+    this->publicaciones.push_back(p);
+
+    cout << "Publicación agregada exitosamente." << endl;
 }
+
 
 Usuario* Usuario::getAmigo(int id){
     for(int i=0; i<amigos.size(); i++){
