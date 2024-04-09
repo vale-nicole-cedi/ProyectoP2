@@ -45,10 +45,12 @@ void Usuario::agregarAmigo(Usuario* nuevoAmigo){
 void Usuario::crearPublicacion() {
     string fecha, contenido;
 
-    cout << "Ingrese la fecha de la publicación: ";
+    cout << "Ingrese la fecha de la publicación: "<<endl;
+    cout<<"Recuerda no usar espacios, puedes usar diagonales (/)";
     cin >> fecha;
 
     cout << "Ingrese el contenido de la publicación: ";
+    cout<<"Recuerda no usar espacios, puedes usar diagonales (/)";
     cin >> contenido;
     cin.ignore();//ignora cualquier carácter adicional
 
