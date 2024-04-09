@@ -7,7 +7,7 @@
 #include <vector>
 using namespace std;
 
-class Usuario;
+class Usuario; 
 
 class Publicacion{
     int id;
