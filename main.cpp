@@ -126,7 +126,36 @@ int main()
                 
                 case 4: //agregar usuario
                     cout << "Agregar usuario: " << endl;
-                    gs.agregarUsuario();
+                    int x;
+                    do 
+                    {
+                        premium:
+                        cout<<"Elige el tipo de usuario a crear:"<<endl;
+                        cout << "1. Normal " << endl; 
+                        cout << "2. Premium" << endl;
+                        cin>>x;
+
+                        switch(x)
+                        {
+                            case 1://Normal
+                                cout << "Disfruta de Gossip Net como usuario normal!" << endl;
+                                gs.agregarUsuario();
+                                break;
+                            
+
+                            case 2: //Premium
+                                cout << "Se te cobrara $50 pesos para ser un usuario premium" << endl;
+                                //AGREGAR USUARIO PREMIUM 
+                                break;
+                            
+
+                            default:
+                                cout<<"Elige una de las opciones por favor"<<endl;
+                                goto premium;
+                                break;
+                        }
+
+                    } while (x !=0)
                     break;
 
                 case 0: //salir
