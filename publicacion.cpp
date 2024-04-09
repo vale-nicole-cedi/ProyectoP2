@@ -12,12 +12,10 @@ void Publicacion::mostrarPublicacion(){
     cout << usuario->nombre << endl;
 }
 
-Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido){
+Publicacion::Publicacion(Usuario* usuario, string fecha, string contenido)
+{
     this->usuario = usuario;
     this->fecha = fecha;
     this->contenido = contenido;
-    Publicacion()
-    {
-        this->ptrusuario=nullptr;
-    }
+    
 }
