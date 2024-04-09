@@ -88,7 +88,9 @@ int main()
                 {
                     if(gs.revisarpremium(idUsuario) == true){
                         usuariopremium = gs.getUsuarioPremium(idUsuario);
-                        cout<<"Haz accedido con exito!"<<endl;
+                        cout << endl;
+                        cout<<"Haz accedido con exito!"<<endl << endl;
+                        cout << "Perfil de: " << usuariopremium->nombre << endl;
                             cout <<endl;
 
 
@@ -215,6 +217,9 @@ int main()
 
                     } else {
                         cout<<"Haz accedido con exito!"<<endl;
+                        cout << endl;
+                        cout << "Perfil de: " << usuario->nombre << endl;
+                        cout << endl;
                     do
                     {
                         menusuario:
