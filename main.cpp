@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 #include "rlutil.h"
 #include "redsocial.h"
+#include "usuario.h"
+#include "publicacion.h"
 using namespace std;
 using namespace rlutil;
 Usuario* usuario;
@@ -39,7 +41,7 @@ int main()
     cout<<"/ /_/ / /_/ /___/ /__/ // // ____/  / /|  / /___  / /    "<<endl;
     cout<<"\\____/\\____//____/____/___/_/      /_/ |_/_____/ /_/     "<<endl;
     cout <<endl;
-                                                                       
+
     while(true)
     {
         menuprincipal:
@@ -54,53 +56,54 @@ int main()
     cout <<endl;
 
     cin>>principal;
-    
+
 
     switch (principal)
         {
 
             case 1: //lista usuarios
-    
+
                 cout << "Lista de usuarios: "<<endl;
                 gs.mostrarUsuarios();
                 cout <<endl;
 
                 break;
-            
+
 
             case 2: //lista publicaciones
-            
+
                 cout << "Lista de publicaciones: " <<endl;
                 gs.mostrarPublicaciones();
                     cout <<endl;
 
                 break;
-            
+
 
             case 3: //perfil de usuario
                 cout << "Ingrese el ID de un usuario para acceder: "<<endl;
                 cout << "ID: ";
                 cin >> idUsuario;
                 usuario = gs.getUsuario(idUsuario);
-                if (usuario != nullptr) 
+                if (usuario != nullptr)
                 {
                     if(gs.revisarpremium(idUsuario) == true){
                         usuariopremium = gs.getUsuarioPremium(idUsuario);
                         cout<<"Haz accedido con exito!"<<endl;
                             cout <<endl;
 
-                        
-                    do 
+
+                    do
                     {
                         menusuariopremium:
                         cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
                         cout <<"1. Ver lista de amigos" << endl; //ascii 49
-                        cout << "2. Ver lista de publicaciones" << endl;
+                        cout << "2. Ver tu lista de publicaciones" << endl;
                         cout << "3. Crear una nueva pulicacion" << endl;
                         cout << "4. Entrar al perfil de un amigo" << endl;
                         cout << "5. Agregar un nuevo amigo" <<endl;
                         cout << "6. Ver todas las publicaciones privadas" << endl;
                         cout << "7. Crear una nueva publicacion privada" << endl;
+                        cout << "8. Ver tu lista de publicaciones privadas" << endl;
                         cout << "0. salir" << endl;
                             cout <<endl;
 
@@ -108,13 +111,13 @@ int main()
 
                         switch(user)
                         {
-                            case 1://lista de amigos 
+                            case 1://lista de amigos
                                 cout << "Esta es tu lista de amigos: " << endl;
                                 usuario->mostrarAmigos();
                                     cout <<endl;
 
                                 break;
-                            
+
 
                             case 2: //lista de publicaciones
                             {
@@ -124,7 +127,7 @@ int main()
 
                                 break;
                             }
-                            
+
                             case 3://crear publicacion
                             {
                                 cout << "Nueva publicacion: " << endl;
@@ -135,7 +138,7 @@ int main()
 
                                 break;
                             }
-                            
+
                             case 4: //entrar perfil amigo
                             {
                                 cout << "Escribe el ID de tu amigo" << endl;
@@ -151,7 +154,7 @@ int main()
 
                                 break;
                             }
-                                
+
                             case 5: // agregar amigo
                             {
                                 cout << "Agregar un amigo"<< endl;
@@ -171,7 +174,7 @@ int main()
 
                             case 6: //ver todas las publicaciones privadas
                             {
-                                cout << "Lista de publicaciones: " <<endl;
+                                cout << "Lista de publicaciones privadas: " <<endl;
                                 gs.mostrarPublicacionesPrivadas();
                                     cout <<endl;
 
@@ -180,7 +183,7 @@ int main()
 
                             case 7: //crear nueva publicacion privada
                             {
-                                cout << "Nueva publicacion: " << endl;
+                                cout << "Nueva publicacion privada: " << endl;
                                 usuariopremium->agregarPrivado();
                                 Publicacion* newpub = usuariopremium->publicacionespriv[(usuariopremium->publicacionespriv.size())-1];
                                 gs.agregarpublicacionprivada(newpub);
@@ -188,7 +191,14 @@ int main()
 
                                 break;
                             }
-                                
+
+                            case 8: //ver tus publicaciones privadas
+                            {
+                                cout << "Esta es tu lista de publicaciones privadas: " << endl;
+                                usuariopremium->verPrivados();
+                                cout << endl;
+                            }
+
                             case 0:
                                 break;
                             default:
@@ -199,13 +209,13 @@ int main()
                                 break;
                         }
 
-                        
+
                     } while (user !=0);
 
 
                     } else {
                         cout<<"Haz accedido con exito!"<<endl;
-                    do 
+                    do
                     {
                         menusuario:
                         cout<<"Da clic en el numero indicado para hacer alguna de estas opciones:"<<endl;
@@ -222,13 +232,13 @@ int main()
 
                         switch(user)
                         {
-                            case 1://lista de amigos 
+                            case 1://lista de amigos
                                 cout << "Esta es tu lista de amigos: " << endl;
                                 usuario->mostrarAmigos();
                                     cout <<endl;
 
                                 break;
-                            
+
 
                             case 2: //lista de publicaciones
                             {
@@ -238,7 +248,7 @@ int main()
 
                                 break;
                             }
-                            
+
                             case 3://crear publicacion
                             {
                                 cout << "Nueva publicacion: " << endl;
@@ -249,7 +259,7 @@ int main()
 
                                 break;
                             }
-                            
+
                             case 4: //entrar perfil amigo
                             {
                                 cout << "Escribe el ID de tu amigo" << endl;
@@ -265,7 +275,7 @@ int main()
 
                                 break;
                             }
-                                
+
                             case 5: // agregar amigo
                             {
                                 cout << "Agregar un amigo"<< endl;
@@ -282,7 +292,7 @@ int main()
 
                                 break;
                             }
-                                
+
                             case 0:
                                 break;
                             default:
@@ -293,21 +303,21 @@ int main()
                                 break;
                         }
 
-                        
+
                     } while (user !=0);
                     }
-                        
+
                 }
                 break;
-                
+
                 case 4: //agregar usuario
                     cout << "Agregar usuario: " << endl;
                     int x;
-                    do 
+                    do
                     {
                         premium:
                         cout<<"Elige el tipo de usuario a crear:"<<endl;
-                        cout << "1. Normal " << endl; 
+                        cout << "1. Normal " << endl;
                         cout << "2. Premium" << endl;
                             cout <<endl;
 
@@ -322,7 +332,7 @@ int main()
                                     cout <<endl;
 
                                 break;
-                            
+
 
                             case 2: //Premium
                                 cout << "Se te cobrara $50 pesos para ser un usuario premium" << endl;
@@ -331,7 +341,7 @@ int main()
                                     cout <<endl;
 
                                 break;
-                            
+
 
                             default:
                                 cout<<"Elige una de las opciones por favor"<<endl;
@@ -353,8 +363,8 @@ int main()
 
                     break;
 
-            
-             
+
+
         }
     }
     return 0;
